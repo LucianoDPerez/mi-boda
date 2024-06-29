@@ -1,0 +1,68 @@
+{
+  "application": {
+    "name": "Nos casamos! Mary & Lucho",
+    "description": "28 de septiembre de 2024",
+    "version": "1.0.0"
+  },
+  "wedding": {
+    "akad": {
+      "tanggal": "Sabado, 28 de septiembre 2024",
+      "jam": "19:30 hs - Iglesia",
+      "lokasi": "Capilla Cristo Obrero",
+      "alamat": "Corrientes y Lamadrid, Victoria - Entre Rios",
+      "gmaps": {
+        "link": "https://maps.app.goo.gl/jPmbK1maCbS4EXh6A",
+        "iframeSrc": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13442.051512869431!2d-60.165356!3d-32.6191628!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b6c2df5c84ce09%3A0xcbe7d48a0eca662d!2sCapilla%20Cristo%20Obrero.!5e0!3m2!1ses!2sar!4v1718674679013!5m2!1ses!2sar"
+      }
+    },
+    "resepsi": {
+      "tanggal": "Sabado, 28 de septiembre 2024",
+      "jam": "21.00 hs - Fiesta",
+      "lokasi": "La Casona Salon de Eventos",
+      "alamat": "H. Yrigoyen 1256, Victoria - Entre Rios",
+      "gmaps": {
+        "link": "https://maps.app.goo.gl/YtYgEYE4DTiNWycv7",
+        "iframeSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3360.6865227200783!2d-60.144034024344016!3d-32.61453657373209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b6c347597ee3e3%3A0x277ab60a1e3a46ef!2sLa%20Casona%2C%20sal%C3%B3n%20de%20eventos!5e0!3m2!1ses!2sar!4v1718674873604!5m2!1ses!2sar"
+      }
+    },
+    "mempelai": {
+      "pria": {
+        "namaDepan": "Lucho",
+        "namaBelakang": "Perez",
+        "namaPanggilan": "Ipul",
+        "orangTua": {
+          "keterangan": "Un tipo comun...",
+          "pria": "😉",
+          "wanita": "😉"
+        },
+        "foto": "/assets/images/mempelai/LuchoP.jpg",
+        "bg": "rgb(229, 229, 203)"
+      },
+      "wanita": {
+        "namaDepan": "Mary",
+        "namaBelakang": "Heinzenknecht",
+        "namaPanggilan": "",
+        "orangTua": {
+          "keterangan": "Una distintiva...",
+          "pria": "🤷‍♀️",
+          "wanita": "💕"
+        },
+        "foto": "/assets/images/mempelai/Mary.jpg",
+        "bg": "rgb(213, 206, 163)"
+      }
+    }
+  },
+  "hero": {
+    "banner": "/assets/images/hero/banner.webp"
+  },
+  "galeri": [
+    "/assets/images/galeri/galeri-01.webp",
+    "/assets/images/galeri/galeri-02.webp",
+    "/assets/images/galeri/galeri-03.webp",
+    "/assets/images/galeri/galeri-04.webp",
+    "/assets/images/galeri/galeri-05.webp",
+    "/assets/images/galeri/galeri-06.webp",
+    "/assets/images/galeri/galeri-07.webp",
+    "/assets/images/galeri/galeri-08.webp"
+  ]
+}

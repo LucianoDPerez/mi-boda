@@ -4,63 +4,46 @@ import { Box } from "@mui/material";
 import useDB from "@/hooks/useDB";
 import Menu from "@/components/Menu";
 import SmoothScroll from "./SmoothScroll";
-import Backsound from "../Backsound";
 import { BrowserView, MobileView } from "react-device-detect";
 
-/**
- * Guest layout
- *
+/** _Guest layout_
  * @param {React.ReactNode} options.children
  * @param {string} options.title
- *
  * @return {React.ReactElement}
  */
 const GuestLayout = ({ children, ...rest }) => {
-  const app = useDB((db) => db.application);
+    const app = useDB((db) => db.application);
 
-  /**
-   * Update title pada document.
-   */
-  React.useEffect(() => {
-    document.title = app.name;
-  }, [app]);
+    /** _Update title on document._ */
+    React.useEffect(() => {
+        document.title = app.name;
+    }, [app]);
 
-  /**
-   * Konten
-   */
-  const content = (
-    <Box component="main" id="mainContent" {...rest}>
-      {children}
-    </Box>
-  );
+    /** _Content_ */
+    const content = (
+        <Box component="main" id="mainContent" {...rest}>
+            {children}
+        </Box>
+    );
 
-  /**
-   * Render komoponen.
-   */
-  return (
-    <>
-      <Menu />
-      <Backsound />
-
-      <BrowserView>
-        <SmoothScroll>{content}</SmoothScroll>
-      </BrowserView>
-
-      <MobileView>{content}</MobileView>
-    </>
-  );
+    /** _Render component._ */
+    return (
+        <>
+            <Menu />
+            <BrowserView>
+                <SmoothScroll>{content}</SmoothScroll>
+            </BrowserView>
+            <MobileView>{content}</MobileView>
+        </>
+    );
 };
 
-/**
- * Prop types
- */
+/** _Prop types_ */
 GuestLayout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
-/**
- * Default props
- */
+/** _Default props_ */
 GuestLayout.defaultProps = {};
 
 export default GuestLayout;

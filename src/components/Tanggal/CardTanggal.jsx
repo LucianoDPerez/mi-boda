@@ -213,7 +213,7 @@ const CardTanggal = ({ title, tanggal, jam, lokasi, alamat, link }) => {
           rel="noopener noreferrer"
           sx={{ borderRadius: 0 }}
         >
-          Kunjungi via GMaps
+          Ver en Google Maps
         </Button>
       </CardActions>
     </Card>

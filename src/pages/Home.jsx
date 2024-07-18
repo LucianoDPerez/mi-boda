@@ -16,28 +16,28 @@ import Backsound from "@/components/Backsound";
 const Home = () => {
     return (
         <GuestLayout>
-            <Backsound />
-            <DownArrowIndicator />
+            <Backsound/>
+            <DownArrowIndicator/>
             <section id="hero">
-                <Hero />
+                <Hero/>
             </section>
             <section id="words">
-                <Words />
+                <Words/>
             </section>
             <section id="mempelai">
-                <Mempelai />
+                <Mempelai/>
             </section>
-            <section id="tanggal">
-                <Tanggal />
+            {/* <section id="tanggal">
+                <Tanggal/>
             </section>
             <section id="lokasi">
-                <Lokasi />
-            </section>
+                <Lokasi/>
+            </section>*/}
             <section id="galeri">
-                <Galeri />
+                <Galeri/>
             </section>
             <footer id="footer">
-                <Footer />
+                <Footer/>
             </footer>
         </GuestLayout>
     );

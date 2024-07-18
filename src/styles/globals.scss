@@ -106,3 +106,16 @@ h6 {
     transform: perspective(1000px) rotateY(360deg);
   }
 }
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.6);  // Tomate con transparencia
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 99, 71, 1);  // Tomate sin transparencia
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(255, 99, 71, 0.6);  // Tomate con transparencia
+  }
+}
+

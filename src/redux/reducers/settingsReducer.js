@@ -6,7 +6,9 @@ const initialState = {
     mode: "light",
     isDark: false,
   },
+  phone: null, // Añadido para almacenar el phone
 };
+
 
 // Slice
 const settingsSlice = createSlice({
@@ -20,11 +22,13 @@ const settingsSlice = createSlice({
         isDark,
       };
     },
+    setPhone: (state, action) => {
+      state.phone = action.payload;
+    },
   },
 });
 
 // Actions
-export const { changeAppearance } = settingsSlice.actions;
-
+export const { changeAppearance, setPhone } = settingsSlice.actions;
 // Reducer
 export default settingsSlice.reducer;

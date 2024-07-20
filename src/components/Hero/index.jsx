@@ -70,8 +70,9 @@ const dividerVariants = {
 const Hero = () => {
   const { hero, wedding } = useDB((db) => db);
 
-  const mempelaiPria = wedding.mempelai.pria.namaDepan;
-  const mempelaiWanita = wedding.mempelai.wanita.namaDepan;
+  const mempelaiWanita = wedding.mempelai.pria.namaDepan;
+  const mempelaiPria = wedding.mempelai.wanita.namaDepan;
+
   const mempelai = `${mempelaiPria} & ${mempelaiWanita}`;
   const undangan = "Nos Casamos!";
 

@@ -75,8 +75,8 @@ const Footer = () => {
         Swal.fire({
           icon: 'success',
           title: '¡Confirmación exitosa!',
-          text: '¡Gracias por confirmar tu asistencia!',
-          confirmButtonText: 'Perfecto'
+          text: '¡Gracias por confirmar tu asistencia! Te esparamos para pasarla super!',
+          confirmButtonText: 'Gracias'
         });
       } else {
         console.error('Error en la solicitud:', response.statusText);
@@ -100,16 +100,21 @@ const Footer = () => {
 
 
 
+  const bankAccounts = [
+    { bankName: "Banco A", accountNumber: "1234567890" },
+    { bankName: "Banco B", accountNumber: "9876543210" },
+  ];
+
   return (
-      <Box
-          component={motion.div}
-          variants={parentVariants}
-          initial="hidden"
-          whileInView="show"
-          exit="exit"
-          viewport={{ once: true }}
-          py={18}
-      >
+    <Box
+      component={motion.div}
+      variants={parentVariants}
+      initial="hidden"
+      whileInView="show"
+      exit="exit"
+      viewport={{ once: true }}
+      py={18}
+    >
         <Container>
           <Grid
               container
@@ -172,10 +177,24 @@ const Footer = () => {
           </Grid>
         </Container>
 
-        <div style={{ textAlign: 'center', fontFamily: 'Arizonia' }}>
-          <Typography variant="h3">
+        <div style={{ textAlign: 'center', fontFamily: 'Roboto' }} >
+        <Divider sx={{ my: 5 }} />
+          <Typography variant="h3"  sx={{ mt: 8, mb: 2 }} style={{ fontFamily: 'Roboto' }} >
             Confirmo Asistencia?
           </Typography>
+
+          <Typography variant="h5" sx={{ mt: 3, mb: 2 }}>
+          Para aquellos que deseen hacernos un regalo, pueden hacerlo a través de estas cuentas bancarias:
+        </Typography>
+        <ul>
+          {bankAccounts.map((account, index) => (
+            <li key={index}>
+              <Typography variant="body1">
+                {account.bankName}: {account.accountNumber}
+              </Typography>
+            </li>
+          ))}
+        </ul>
           <Button
               variant="contained"
               onClick={handleConfirm}
@@ -197,7 +216,7 @@ const Footer = () => {
                 animation: 'pulse 2s infinite',  // Animación de parpadeo
               }}
           >
-            SI
+            Obvio que si...
           </Button>
 
 

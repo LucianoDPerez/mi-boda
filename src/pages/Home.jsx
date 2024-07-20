@@ -27,12 +27,12 @@ const Home = () => {
             <section id="mempelai">
                 <Mempelai/>
             </section>
-            {/* <section id="tanggal">
+            <section id="tanggal">
                 <Tanggal/>
             </section>
             <section id="lokasi">
                 <Lokasi/>
-            </section>*/}
+            </section>
             <section id="galeri">
                 <Galeri/>
             </section>

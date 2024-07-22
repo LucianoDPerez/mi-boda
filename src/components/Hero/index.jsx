@@ -175,6 +175,7 @@ const Hero = () => {
                 textAlign: {
                   md: "left",
                   xs: "center",
+                  fontFamily: "Courgette",
                 },
                 fontSize: {
                   md: "3em",

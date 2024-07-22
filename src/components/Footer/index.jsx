@@ -30,6 +30,29 @@ const textVariants = {
   },
 };
 
+const copyToClipboard = (text) => {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        alert('Número de cuenta copiado al portapapeles');
+      })
+      .catch(err => {
+        alert('Hubo un error al copiar el número de cuenta');
+        console.error('Error al copiar el texto: ', err);
+      });
+  } else {
+    // Si la API de Clipboard no está disponible.
+    let textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();    
+      document.execCommand('copy');
+
+      alert('Número de cuenta copiado al portapapeles');
+  }
+};
+
 /**
  * Divider variant
  */
@@ -55,7 +78,7 @@ const Footer = () => {
   const { pria, wanita } = useDB((db) => db.wedding.mempelai);
   const doaRestu =
       "Que compartas tu tiempo con nosotros no tiene precio. Nosotros te lo vamos a agradecer siendo felices.";
-  const berbahagia = "Estamos muy contentos de verte en nuestro día especial.";
+  const berbahagia = "Estaremos muy contentos de verte en nuestro día especial.";
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -63,7 +86,7 @@ const Footer = () => {
 
   const handleConfirm = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/guests`, {
+      const response = await fetch(`http://boda-back.bsapps.site/api/guests`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -101,8 +124,8 @@ const Footer = () => {
 
 
   const bankAccounts = [
-    { bankName: "Banco A", accountNumber: "1234567890" },
-    { bankName: "Banco B", accountNumber: "9876543210" },
+    { bankName: "Banco Entre Rios - HEINZENKNECHT, MARIA ELISA CBU", accountNumber: "3860011905000046530085" },
+    { bankName: "Banco Santander Rio - PEREZ, LUCIANO DAVID CBU", accountNumber: "0720397688000036332540" },
   ];
 
   return (
@@ -126,7 +149,7 @@ const Footer = () => {
             <Grid item xs={12}>
               <Typography
                   variant="h4"
-                  sx={{ textAlign: "center", fontFamily: "Arizonia" }}
+                  sx={{ textAlign: "center", fontFamily: "Courgette" }}
               >
                 {doaRestu.split(" ").map((text, key) => (
                     <TextMask key={key} variants={textVariants}>
@@ -147,7 +170,7 @@ const Footer = () => {
 
               <Typography
                   variant="h2"
-                  sx={{ textAlign: "center", fontFamily: "Arizonia" }}
+                  sx={{ textAlign: "center", fontFamily: "Courgette" }}
               >
                 {berbahagia.split(" ").map((text, key) => (
                     <TextMask key={key} variants={textVariants}>
@@ -179,29 +202,41 @@ const Footer = () => {
 
         <div style={{ textAlign: 'center', fontFamily: 'Roboto' }} >
         <Divider sx={{ my: 5 }} />
-          <Typography variant="h3"  sx={{ mt: 8, mb: 2 }} style={{ fontFamily: 'Roboto' }} >
-            Confirmo Asistencia?
+          <Typography variant="h3"  sx={{ mt: 8, mb: 2 }} style={{ fontFamily: 'Courgette' }} >
+            Confirmo asistencia?
           </Typography>
-
-          <Typography variant="h5" sx={{ mt: 3, mb: 2 }}>
-          Para aquellos que deseen hacernos un regalo, pueden hacerlo a través de estas cuentas bancarias:
-        </Typography>
-        <ul>
-          {bankAccounts.map((account, index) => (
-            <li key={index}>
-              <Typography variant="body1">
-                {account.bankName}: {account.accountNumber}
-              </Typography>
-            </li>
-          ))}
-        </ul>
+        <Box sx={{ border: '2px solid #4caf50', borderRadius: '8px', padding: '16px', mt: 3, mb: 5 }}>
+          <Typography variant="h5" sx={{ mt: 3, mb: 5 }}>
+            Para aquellos que deseen hacernos un regalo, pueden hacerlo a través de estas cuentas bancarias:
+          </Typography>
+          <ul style={{ listStyleType: 'none', padding: 0 }}>
+            {bankAccounts.map((account, index) => (
+              <li key={index}>
+                <Typography variant="h6" sx={{ mt: 2}}>
+                  {account.bankName}: {account.accountNumber}
+                  <Button 
+                variant="contained" 
+                color="primary" 
+                style={{ marginLeft: 10 }} 
+                sx={{mb: 2, backgroundColor: 'green',  // Tomate
+                  color: '#FFFFFF',  // Blanco
+                  fontWeight: 'bold', }}
+                onClick={() => copyToClipboard(account.accountNumber)}
+              >
+                Copiar
+              </Button>
+                </Typography>
+              </li>
+            ))}
+          </ul>
+        </Box>
           <Button
               variant="contained"
               onClick={handleConfirm}
               sx={{
-                marginTop: '36px',
+                marginTop: '46px',
                 marginBottom: '30px',
-                fontFamily: 'Arizonia',
+                fontFamily: 'arial',
                 fontSize: '24px',
                 padding: '10px 20px',
                 backgroundColor: '#FF6347',  // Tomate

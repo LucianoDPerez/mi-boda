@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "deploy": "npm run build"
   },
-  "homepage": "http://bsapps.site",
+  "homepage": "https://bsapps.site",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",

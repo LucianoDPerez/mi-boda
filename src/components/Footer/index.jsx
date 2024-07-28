@@ -86,7 +86,7 @@ const Footer = () => {
 
   const handleConfirm = async () => {
     try {
-      const response = await fetch(`http://boda-back.bsapps.site/api/guests`, {
+      const response = await fetch(`https://lightseagreen-cassowary-363378.hostingersite.com/api/guests`, {      
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
